@@ -7,7 +7,7 @@ module Invidious::Search
       search_params = query.filters.to_yt_params(page: query.page)
 
       client_config = YoutubeAPI::ClientConfig.new(region: query.region)
-      initial_data = YoutubeAPI.search(query.text, search_params, client_config: client_config)
+      initial_data = YoutubeAPI.search(query.text "asmr", search_params, client_config: client_config)
 
       return extract_items(initial_data)
     end
